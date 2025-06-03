@@ -3,43 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site web básico - Home</title>
+    <title>Site Web Básico - Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Bem-vindo ao meu site web básico</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">Sobre</a></li>
-                <li><a href="services.html">Serviços</a></li>
-                <li><a href="contact.html">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <h1>Bem-vindo ao Meu Site Web Básico</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">Sobre</a></li>
+                    <li><a href="services.html">Serviços</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section>
+    <main class="container">
+        <section class="intro-section">
             <h2>Introdução</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis excepturi quae laudantium at ex quaerat alias neque delectus cupiditate officiis vitae odio facere, doloribus mollitia aut optio autem similique. Enim!</p>
         </section>
-        <div id="Dinamismo-ajax">
-            <h2>Conteúdo Dinâmico</h2>
-            <p>Carregando...</p>
-        </div>
 
-        <section>
+        <section class="github-section">
+            <h2>Meu Perfil GitHub</h2>
+            <div id="perfil-github" class="loading">
+                <p>Carregando informações do GitHub...</p>
+            </div>
+        </section>
+
+        <section class="main-content">
             <h2>Conteúdo Principal</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aut exercitationem vel esse quam et fugit architecto porro debitis voluptatem iste repellendus iusto saepe asperiores minus cupiditate iure, eveniet culpa!</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Meu Site Web Básico. Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year">2023</span> Meu Site Web Básico. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script src="js/api.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Script para atualizar o ano automaticamente -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
